@@ -1,0 +1,19 @@
+apiVersion: eksctl.io/vlalpha5
+kind: ClusterConfig
+metadata:
+   name : serega-super-cluster
+   region: us-west-2
+#vpc:
+#  subnets:
+#   private:
+#     us-west-2a:	{	id:	subnet-Offadvit300c	}
+#     us-west-2b:	{	id:	subnet-0534the5cf03	}
+#     us-west-2c:	{	id:	subnet042sbest32184	}
+
+nodeGroups:
+   - name              : worker-nodes-group-1
+     instanceType      : m5.large
+     desiredCapacity   : 2
+   - name              : worker-nodes-group-2
+       instanceType    : r5.large
+       desiredCapacity : 2
