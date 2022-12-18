@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       labels:
-        project: sss1
+        project: sss
     spec:
       containers:
         - name : sss-web
