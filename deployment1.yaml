@@ -1,0 +1,24 @@
+#-------------------------------------------------------------
+# Manifest File to create Simple Deployment with Labels
+#
+#-------------------------------------------------------------
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment
+  labels:
+    app : my-k8s-application
+spec:
+  selector:
+    matchLabels:
+      project: sss
+  template:
+    metadata:
+      labels:
+        project: sss1
+    spec:
+      containers:
+        - name : sss-web
+          image: k8sphp:latest
+          ports:
+            - containerPort: 80
