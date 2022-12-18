@@ -1,0 +1,24 @@
+#-------------------------------------------------------------
+# Manifest File to create Pod with two Containers
+#
+#-------------------------------------------------------------
+apiVersion : v1
+kind: Pod
+metadata:
+  name: my-app
+  labels:
+    env  : prod
+    app  : main
+    tier : frontend
+    owner: Serega
+spec:
+  containers:
+    - name : container-web
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+
+    - name : container-api
+      image: tomcat:11.0
+      ports:
+        - containerPort: 8080
