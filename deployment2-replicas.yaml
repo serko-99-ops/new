@@ -1,0 +1,26 @@
+#-------------------------------------------------------------
+# Manifest File to create Deployment with Labels and ReplicaSet
+#-------------------------------------------------------------
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment-replicas
+  labels:
+    app  : my-k8s-application
+    env  : prod
+    owner: Serega
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: ciaa
+  template:
+    metadata:
+      labels:
+        project: ciaa
+    spec:
+      containers:
+        - name : ciaa-web
+          image: adv4000/k8sphp:version1
+          ports:
+            - containerPort: 80
