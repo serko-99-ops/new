@@ -1,0 +1,14 @@
+#-------------------------------------------------------------
+# Manifest File to create Pod in one Container
+#
+#-------------------------------------------------------------
+apiVersion : v1
+kind: Pod
+metadata:
+  name: hello-world
+spec:
+  containers:
+    - name : container-hello-world
+      image: nginx:latest
+      ports:
+        - containerPort: 80
