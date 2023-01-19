@@ -4,7 +4,7 @@ AWS_DEFAULT_REGION = "eu-central-1"
 # Region where lambda is  running
 os.environ['AWS_DEFAULT_REGION'] = AWS_DEFAULT_REGION
 
-bucketname ="serega231bucket231456666" + str(time.time())
+bucketname ="serega231bucket-lambda-" + str(time.time())
 
 def lambda_handler(event, context):
     myS3 = boto3.resource('s3')
